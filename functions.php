@@ -2,12 +2,13 @@
 
 declare(strict_types=1);
 
-use Flasher\Notyf\Prime\NotyfInterface;
+namespace Flasher\Notyf\Prime;
+
 use Flasher\Prime\Container\FlasherContainer;
 use Flasher\Prime\Notification\Envelope;
 use Flasher\Prime\Notification\Type;
 
-if (!function_exists('notyf')) {
+if (!\function_exists('Flasher\Notyf\Prime\notyf')) {
     /**
      * Creates a Notyf notification or returns the Notyf factory.
      *
@@ -32,7 +33,7 @@ if (!function_exists('notyf')) {
     {
         $factory = FlasherContainer::create('flasher.notyf');
 
-        if (0 === func_num_args()) {
+        if (0 === \func_num_args()) {
             return $factory;
         }
 
